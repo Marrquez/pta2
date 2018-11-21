@@ -1,0 +1,33 @@
+<button (click)="navigate('home')">Back</button>
+<h1>
+  Numbers!
+</h1>
+<p>
+  <input type="number"
+         [(ngModel)]="counter"
+         [value]="counter"
+         (ngModelChange)="showNumbers()" />
+</p>
+<div>
+  <p>Usando modulo externo</p>
+  <span *ngFor="let n of range">
+    {{ (n + 1) % 3 === 0 && (n + 1) % 5 === 0 ?
+      "FizzBuzz" : (n + 1) % 3 === 0 ?
+        "Fizz" : (n + 1) % 5 === 0 ?
+          "Buzz" : n + 1 }}
+  </span>
+  <hr />
+  <p>Usando strings</p>
+  <span *ngFor="let dummy of ' '.repeat(counter).split(''), let x = index">
+    {{ (x + 1) % 3 === 0 && (x + 1) % 5 === 0 ?
+    "FizzBuzz" : (x + 1) % 3 === 0 ?
+      "Fizz" : (x + 1) % 5 === 0 ?
+        "Buzz" : x + 1 }}
+  </span>
+  <hr />
+  <p>Usando un pipe</p>
+  <span *ngFor="let dummy of ' '.repeat(counter).split(''), let x = index">
+    {{ x | async | validateNumber }}
+  </span>
+</div>
+

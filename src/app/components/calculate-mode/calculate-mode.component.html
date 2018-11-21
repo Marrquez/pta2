@@ -1,0 +1,14 @@
+<button (click)="navigate('home')">Back</button>
+<h1>
+ Mode!
+</h1>
+<p>
+  <input type="number"
+         [(ngModel)]="nuevo"
+         [value]="nuevo" />
+  <button (click)="addNumber()">Agregar</button>
+</p>
+<div>
+  <p>Current Array: [{{ numbers.toString() }}]</p>
+  {{ numbers | calculateMode }}
+</div>
