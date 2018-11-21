@@ -19,6 +19,11 @@ import { ValidateNumberPipe } from './pipes/validate-number.pipe';
 import { CalculateModePipe } from './pipes/calculate-mode.pipe';
 import { ValidateAnagramaComponent } from './components/validate-anagrama/validate-anagrama.component';
 
+/**
+ * services
+ * */
+import { NumbersService } from './services/numbers.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +39,7 @@ import { ValidateAnagramaComponent } from './components/validate-anagrama/valida
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [NumbersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

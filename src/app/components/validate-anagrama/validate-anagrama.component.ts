@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
+/**
+ * services
+ * */
+import { NumbersService } from '../../services/numbers.service';
 
 @Component({
   selector: 'app-validate-anagrama',
@@ -11,7 +15,7 @@ export class ValidateAnagramaComponent implements OnInit {
   private secondWord:string = '';
   private isAnagrama:boolean = true;
   constructor(
-    private router: Router
+    private numbers:NumbersService
   ) { }
 
   ngOnInit() {
@@ -24,7 +28,7 @@ export class ValidateAnagramaComponent implements OnInit {
    * }
    * */
   navigate(view:string){
-    this.router.navigate([view, {}]);
+    this.numbers.navigate(view);
   }
 
   /**

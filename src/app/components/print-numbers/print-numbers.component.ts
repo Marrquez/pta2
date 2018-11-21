@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 /**
  * external libraries
  * */
 import _ from "lodash";
+
+/**
+ * services
+ * */
+import { NumbersService } from '../../services/numbers.service';
 
 @Component({
   selector: 'app-print-numbers',
@@ -15,7 +19,7 @@ export class PrintNumbersComponent implements OnInit {
   range = [];
   private counter:number = 0;
   constructor(
-    private router: Router
+    private numbers:NumbersService
   ) { }
 
   ngOnInit() {
@@ -28,7 +32,7 @@ export class PrintNumbersComponent implements OnInit {
    * }
    * */
   navigate(view:string){
-    this.router.navigate([view, {}]);
+    this.numbers.navigate(view);
   }
 
   /**

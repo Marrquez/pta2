@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+
+/**
+ * services
+ * */
+import { NumbersService } from '../../services/numbers.service';
 
 @Component({
   selector: 'app-calculate-mode',
@@ -11,7 +15,7 @@ export class CalculateModeComponent implements OnInit {
   private nuevo:number = 0;
 
   constructor(
-    private router: Router
+    private ns:NumbersService
   ) { }
 
   ngOnInit() {
@@ -24,7 +28,7 @@ export class CalculateModeComponent implements OnInit {
    * }
    * */
   navigate(view:string){
-    this.router.navigate([view, {}]);
+    this.ns.navigate(view);
   }
 
   /**
