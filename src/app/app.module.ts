@@ -17,6 +17,7 @@ import { CalculateModeComponent } from './components/calculate-mode/calculate-mo
  * */
 import { ValidateNumberPipe } from './pipes/validate-number.pipe';
 import { CalculateModePipe } from './pipes/calculate-mode.pipe';
+import { ValidateAnagramaComponent } from './components/validate-anagrama/validate-anagrama.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CalculateModePipe } from './pipes/calculate-mode.pipe';
     PrintNumbersComponent,
     ValidateNumberPipe,
     CalculateModePipe,
-    CalculateModeComponent
+    CalculateModeComponent,
+    ValidateAnagramaComponent
   ],
   imports: [
     BrowserModule,

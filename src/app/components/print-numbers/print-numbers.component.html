@@ -27,7 +27,7 @@
   <hr />
   <p>Usando un pipe</p>
   <span *ngFor="let dummy of ' '.repeat(counter).split(''), let x = index">
-    {{ x | async | validateNumber }}
+    {{ x | validateNumber }}
   </span>
 </div>
 

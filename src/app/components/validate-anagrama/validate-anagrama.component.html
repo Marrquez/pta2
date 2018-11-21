@@ -1,0 +1,25 @@
+<button (click)="navigate('home')">Back</button>
+<h1>
+  Anagramas!
+</h1>
+<div class="anagrama-words">
+  <div>
+    <span>Palabra 1</span>
+    <input type="text"
+           [(ngModel)]="firstWord"
+           [value]="firstWord"
+           (ngModelChange)="validateWords()" />
+  </div>
+  <div>
+    <span>Palabra 2</span>
+    <input type="text"
+           [(ngModel)]="secondWord"
+           [value]="secondWord"
+           (ngModelChange)="validateWords()" />
+  </div>
+</div>
+<br />
+<br />
+<p [ngClass]="{'blue':isAnagrama, 'red': !isAnagrama}">
+  {{ isAnagrama ? "Es Anagrama" : "No es anagrama"}}
+</p>
